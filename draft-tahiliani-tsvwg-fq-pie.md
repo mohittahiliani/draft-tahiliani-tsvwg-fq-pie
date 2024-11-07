@@ -1,7 +1,7 @@
 ---
 title: "Flow Queue PIE: A Hybrid Packet Scheduler and Active Queue Management Algorithm"
 abbrev: "TODO - Abbreviation"
-category: info
+category: exp
 
 docname: draft-tahiliani-tsvwg-fq-pie-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
