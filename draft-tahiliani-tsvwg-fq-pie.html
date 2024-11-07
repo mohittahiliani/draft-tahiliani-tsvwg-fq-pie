@@ -7,7 +7,7 @@
 <title>Flow Queue PIE: A Hybrid Packet Scheduler and Active Queue Management Algorithm</title>
 <meta content="Mohit P. Tahiliani" name="author">
 <meta content="
-       TODO Abstract 
+       This document presents Flow Queue Proportional Integral controller Enhanced (FQ-PIE), a hybrid packet scheduler and Active Queue Management (AQM) algorithm to isolate flows and tackle the problem of bufferbloat. FQ-PIE uses hashing to classify incoming packets into different queues and provide flow isolation. Packets are dequeued by using a variant of the round robin scheduler. Each such flow is managed by the PIE algorithm to maintain high link utilization while controlling the queue delay to a target value. 
     " name="description">
 <meta content="xml2rfc 3.24.0" name="generator">
 <meta content="next generation" name="keyword">
@@ -1114,7 +1114,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <h1 id="title">Flow Queue PIE: A Hybrid Packet Scheduler and Active Queue Management Algorithm</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">TODO Abstract<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">This document presents Flow Queue Proportional Integral controller Enhanced (FQ-PIE), a hybrid packet scheduler and Active Queue Management (AQM) algorithm to isolate flows and tackle the problem of bufferbloat. FQ-PIE uses hashing to classify incoming packets into different queues and provide flow isolation. Packets are dequeued by using a variant of the round robin scheduler. Each such flow is managed by the PIE algorithm to maintain high link utilization while controlling the queue delay to a target value.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1184,22 +1184,42 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-introduction" class="internal xref">Introduction</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
-            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
+            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-terminology" class="internal xref">Terminology</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
-            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
-            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-the-fq-pie-algorithm" class="internal xref">The FQ-PIE Algorithm</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.1">
+                <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-enqueue" class="internal xref">Enqueue</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2">
+                <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="auto internal xref">4.2</a>.  <a href="#name-dequeue" class="internal xref">Dequeue</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.3">
+                <p id="section-toc.1-1.4.2.3.1"><a href="#section-4.3" class="auto internal xref">4.3</a>.  <a href="#name-ecn-support" class="internal xref">ECN Support</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
-            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-scope-of-experimentation" class="internal xref">Scope of Experimentation</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
+            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
+            <p id="section-toc.1-1.9.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
+            <p id="section-toc.1-1.10.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
 </li>
         </ul>
 </nav>
@@ -1210,40 +1230,114 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">TODO Introduction<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-1">Flow Queue Proportional Integral Controller Enhanced (FQ-PIE) combines flow queuing with the PIE (Proportional Integral controller Enhanced) Active Queue Management (AQM) algorithm to provide flow isolation and reduce bufferbloat by controlling queue delay. This is similar to how Flow Queue Controlled Delay (FQ-CoDel) integrates flow queuing with the CoDel (Controlled Delay) AQM algorithm.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">When a packet is enqueued, it is classified into different queues to ensure isolation between flows. While the goal of flow queuing is to assign a unique queue to each flow, flows can instead be hashed into a set of buckets using a hash function, where each bucket corresponds to its own queue. The PIE AQM operates independently on each of these queues, enabling each flow to receive appropriate congestion signals either implicitly (via packet drops) or explicitly (via mechanisms such as Explicit Congestion Notification (ECN)). For dequeuing, FQ-PIE employs the Deficit Round Robin (DRR) based scheduler described in RFC 8290, which ensures fair packet scheduling across the different queues.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">FQ-PIE has been incorporated into the mainline Linux kernel as a queuing discipline (qdisc) and is supported by several Linux distributions. Additionally, an implementation of FQ-PIE is available in the ns-3 network simulator.<a href="#section-1-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="terminology">
+<section id="section-2">
+      <h2 id="name-terminology">
+<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-terminology" class="section-name selfRef">Terminology</a>
+      </h2>
+<p id="section-2-1">This document uses the terms defined in Section 1.1 of RFC 8290 and Sections 4 and 5 of RFC 8033.<a href="#section-2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
-<section id="section-2">
+<section id="section-3">
       <h2 id="name-conventions-and-definitions">
-<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-conventions-and-definitions" class="section-name selfRef">Conventions and Definitions</a>
+<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-conventions-and-definitions" class="section-name selfRef">Conventions and Definitions</a>
       </h2>
-<p id="section-2-1">The key words "<span class="bcp14">MUST</span>", "<span class="bcp14">MUST NOT</span>", "<span class="bcp14">REQUIRED</span>", "<span class="bcp14">SHALL</span>", "<span class="bcp14">SHALL NOT</span>", "<span class="bcp14">SHOULD</span>", "<span class="bcp14">SHOULD NOT</span>", "<span class="bcp14">RECOMMENDED</span>", "<span class="bcp14">NOT RECOMMENDED</span>",
+<p id="section-3-1">The key words "<span class="bcp14">MUST</span>", "<span class="bcp14">MUST NOT</span>", "<span class="bcp14">REQUIRED</span>", "<span class="bcp14">SHALL</span>", "<span class="bcp14">SHALL NOT</span>", "<span class="bcp14">SHOULD</span>", "<span class="bcp14">SHOULD NOT</span>", "<span class="bcp14">RECOMMENDED</span>", "<span class="bcp14">NOT RECOMMENDED</span>",
 "<span class="bcp14">MAY</span>", and "<span class="bcp14">OPTIONAL</span>" in this document are to be interpreted as
 described in BCP 14 <span>[<a href="#RFC2119" class="cite xref">RFC2119</a>]</span> <span>[<a href="#RFC8174" class="cite xref">RFC8174</a>]</span> when, and only when, they
-appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶</a></p>
+appear in all capitals, as shown here.<a href="#section-3-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="the-fq-pie-algorithm">
+<section id="section-4">
+      <h2 id="name-the-fq-pie-algorithm">
+<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-the-fq-pie-algorithm" class="section-name selfRef">The FQ-PIE Algorithm</a>
+      </h2>
+<p id="section-4-1">The FQ-PIE algorithm consists of two main components: (i) flow queuing, which isolates competing flows by treating flows that build queues differently from those that do not, and (ii) the PIE AQM algorithm, which manages each queue and maintains a target queue delay (recommended as 15 ms in RFC 8033). Flow queuing works by classifying incoming packets into different queues during the enqueue phase and then scheduling outgoing packets from these queues during the dequeue phase. The PIE algorithm, however, only operates during enqueue.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-2">The details of flow queuing and the PIE algorithm are not covered here; for more information, please refer to RFC 8290 and RFC 8033, respectively.<a href="#section-4-2" class="pilcrow">¶</a></p>
+<div id="enqueue">
+<section id="section-4.1">
+        <h3 id="name-enqueue">
+<a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-enqueue" class="section-name selfRef">Enqueue</a>
+        </h3>
+<p id="section-4.1-1">The packet enqueue process is described as follows: first, the incoming packets are classified into different queues by hashing the 5-tuple, which includes the protocol number, source and destination IP addresses, and source and destination port numbers, similar to the approach used in FQ-CoDel.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
+<p id="section-4.1-2">Next, the packet is passed to the PIE algorithm, which uses a drop probability to determine whether the packet should be enqueued or dropped, as outlined in RFC 8033. This drop probability is updated periodically (every 16 ms, as per RFC 8033) based on the current queue delay’s deviation from the target delay and whether the delay is trending up or down.<a href="#section-4.1-2" class="pilcrow">¶</a></p>
+<p id="section-4.1-3">RFC 8033 presents two methods for calculating the current queue delay: one uses Little’s Law, estimating delay based on the queue length and the average dequeue rate; the other takes direct measurements using timestamps, as implemented in CoDel and FQ-CoDel. However, experimental studies on the PIE algorithm indicate that while the dequeue rate is intended to estimate the transmission rate of packets over the outgoing link, it may instead reflect the rate at which packets move from the host stack (e.g., Linux qdisc) to the device driver’s transmission ring. Additionally, in FQ-PIE, queue delay estimates from Little’s Law can be unreliable, as it’s challenging to calculate an accurate per-queue dequeue rate. Consequently, the FQ-PIE algorithm <span class="bcp14">SHOULD</span> calculate the current queue delay using direct measurements with timestamps.<a href="#section-4.1-3" class="pilcrow">¶</a></p>
+<p id="section-4.1-4">It is important to note that the timestamping approach provides a "per-packet queue delay," while the drop probability is calculated periodically (every 16 ms, as specified in RFC 8033). Therefore, the FQ-PIE algorithm <span class="bcp14">MAY</span> use the queue delay value from the most recently dequeued packet when calculating the drop probability.<a href="#section-4.1-4" class="pilcrow">¶</a></p>
+<p id="section-4.1-5">At the time of writing this document, both the Linux and ns-3 implementations use timestamps to calculate the current queue delay and consider the measurements from the most recently dequeued packet when calculating the drop probability. Additionally, both implementations offer an option to use the dequeue rate estimation technique based on Little’s Law.<a href="#section-4.1-5" class="pilcrow">¶</a></p>
+<p id="section-4.1-6">Lastly, if an incoming packet arrives when the total number of enqueued packets has already saturated the queue capacity, FQ-PIE drops the packet without further processing. In contrast, FQ-CoDel identifies the queue with the largest current byte count (i.e., a "fat flow") when the queue capacity is saturated and drops half of the packets from this queue (up to a maximum of 64 packets, as specified in Section 4.1 of RFC 8290). FQ-PIE does not adopt this approach for the reasons explained below.<a href="#section-4.1-6" class="pilcrow">¶</a></p>
+<p id="section-4.1-7">Since CoDel performs its queue control operations during the dequeue phase and does not drop incoming packets until the queue is full, it tends to fill its queues more quickly than PIE, which drops packets randomly during the enqueue phase. This is especially true when CoDel has just entered the dropping phase, as it takes time to ramp up its packet dropping frequency. Therefore, the strategy of dropping half of the packets from a fat flow's queue suits FQ-CoDel but is not appropriate for FQ-PIE. Dropping packets in bulk might lead to underutilization of link capacity, as FQ-PIE already enforces queue control during the enqueue phase.<a href="#section-4.1-7" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="dequeue">
+<section id="section-4.2">
+        <h3 id="name-dequeue">
+<a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-dequeue" class="section-name selfRef">Dequeue</a>
+        </h3>
+<p id="section-4.2-1">The packet dequeue process in FQ-PIE is similar to that in FQ-CoDel, where a DRR-based scheduler is used to dequeue packets from each queue. The key difference is that in FQ-CoDel, CoDel operates during this phase, whereas in FQ-PIE, PIE operates during the enqueue phase. The method for obtaining direct measurements of per-packet queue delay is the same in both FQ-PIE and FQ-CoDel, and is performed during the dequeue phase.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="ecn-support">
+<section id="section-4.3">
+        <h3 id="name-ecn-support">
+<a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-ecn-support" class="section-name selfRef">ECN Support</a>
+        </h3>
+<p id="section-4.3-1">FQ-PIE <span class="bcp14">MAY</span> support ECN by marking ECN-Capable Transport (ECT) packets instead of dropping them, in accordance with the recommendations in Section 5.1 of RFC 8033. Both implementations, Linux and ns-3, comply with these recommendations at the time of writing this document.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+<div id="scope-of-experimentation">
+<section id="section-5">
+      <h2 id="name-scope-of-experimentation">
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-scope-of-experimentation" class="section-name selfRef">Scope of Experimentation</a>
+      </h2>
+<p id="section-5-1">The design of the FQ-PIE algorithm as described in this document has been a part of the Linux kernel since version 5.6 (released on March 29, 2020) and ns-3 network simulator since version ns-.3.34 (released on July 14, 2021). The following aspects can be explored for further study and experimentation:<a href="#section-5-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-5-2.1">
+          <p id="section-5-2.1.1">Interactions between flow queuing and new congestion control algorithms, such as Bottleneck Bandwidth and Round-trip propagation time (BBR).<a href="#section-5-2.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-5-2.2">
+          <p id="section-5-2.2.1">Different packet drop probability thresholds to switch from marking packets to dropping packets.<a href="#section-5-2.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-5-2.3">
+          <p id="section-5-2.3.1">Evaluation of the enhancements to the PIE algorithm described in Section 5 in RFC 8033 to decide which enhancements are suitable for deployment with FQ-PIE.<a href="#section-5-2.3.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-5-2.4">
+          <p id="section-5-2.4.1">Effectiveness of FQ-PIE in terms of providing isolation and minimal latency for low volume traffic (short flows) such as web applications, instant messaging applications, interactive applications and IoT applications.<a href="#section-5-2.4.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-5-2.5">
+          <p id="section-5-2.5.1">Different hashing mechanisms to improve the overall working of flow queuing.<a href="#section-5-2.5.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
 </section>
 </div>
 <div id="security-considerations">
-<section id="section-3">
+<section id="section-6">
       <h2 id="name-security-considerations">
-<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-3-1">TODO Security<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-6-1">The FQ-PIE algorithm introduces no specific security exposures. The flow queuing aspect of the FQ-PIE algorithm is the same as FQ-CoDel, and hence has similar advantages from the security perspective as outlined in Section 8 of RFC 8290. The PIE aspect of the FQ-PIE algorithm is the same as described in RFC 8033 that does not have any security exposures.<a href="#section-6-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
-<section id="section-4">
+<section id="section-7">
       <h2 id="name-iana-considerations">
-<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-4-1">This document has no IANA actions.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-7-1">This document has no IANA actions.<a href="#section-7-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-normative-references">
-<section id="section-5">
+<section id="section-8">
       <h2 id="name-normative-references">
-<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
       </h2>
 <dl class="references">
 <dt id="RFC2119">[RFC2119]</dt>
