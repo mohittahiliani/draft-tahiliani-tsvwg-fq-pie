@@ -112,7 +112,7 @@ Table of Contents
    scheduling across the different queues.
 
    FQ-PIE has been incorporated into the mainline Linux kernel as a
-   queuing discipline (qdisc) (LINUX-FQ-PIE) and is supported by several
+   queuing discipline (qdisc) [LINUX-FQ-PIE] and is supported by several
    Linux distributions.  Additionally, an implementation of FQ-PIE is
    available in the ns-3 network simulator.
 
