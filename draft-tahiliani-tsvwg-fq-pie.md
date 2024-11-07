@@ -60,7 +60,7 @@ This document uses the terms defined in Section 1.1 of {{!RFC8290}} and Sections
 
 The FQ-PIE algorithm consists of two main components: (i) flow queuing, which isolates competing flows by treating flows that build queues differently from those that do not, and (ii) the PIE AQM algorithm, which manages each queue and maintains a target queue delay (recommended as 15 ms in {{!RFC8033}}). Flow queuing works by classifying incoming packets into different queues during the enqueue phase and then scheduling outgoing packets from these queues during the dequeue phase. The PIE algorithm, however, only operates during enqueue.
 
-The details of flow queuing and the PIE algorithm are not covered here; for more information, please refer to RFC 8290 and RFC 8033, respectively.
+The details of flow queuing and the PIE algorithm are not covered here; for more information, please refer to {{!RFC8290}} and {{!RFC8033}}, respectively.
 
 ## Enqueue
 
