@@ -37,7 +37,7 @@ author:
 normative:
 
 informative:
-
+I-D.cardwell-iccrg-bbr-congestion-control:
 
 --- abstract
 
@@ -95,7 +95,7 @@ FQ-PIE MAY support ECN by marking ECN-Capable Transport (ECT) packets {{!RFC3168
 
 The design of the FQ-PIE algorithm as described in this document has been a part of the Linux kernel since version 5.6 (released on March 29, 2020) and ns-3 network simulator since version ns-3.34 (released on July 14, 2021). The following aspects can be explored for further study and experimentation:
 
-- Interactions between flow queuing and new congestion control algorithms, such as Bottleneck Bandwidth and Round-trip propagation time (BBR).
+- Interactions between flow queuing and new congestion control algorithms, such as Bottleneck Bandwidth and Round-trip propagation time (BBR) {{?I-D.cardwell-iccrg-bbr-congestion-control}}.
 
 - Different packet drop probability thresholds to switch from marking packets to dropping packets.
 
