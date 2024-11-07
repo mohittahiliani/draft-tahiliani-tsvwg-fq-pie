@@ -1237,7 +1237,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
       </h2>
 <p id="section-1-1">Flow Queue Proportional Integral Controller Enhanced (FQ-PIE) combines flow queuing with the PIE (Proportional Integral controller Enhanced) <span>[<a href="#RFC8033" class="cite xref">RFC8033</a>]</span> Active Queue Management (AQM) algorithm to provide flow isolation and reduce bufferbloat by controlling queue delay. This is similar to how Flow Queue Controlled Delay (FQ-CoDel) <span>[<a href="#RFC8290" class="cite xref">RFC8290</a>]</span> integrates flow queuing with the CoDel (Controlled Delay) AQM algorithm <span>[<a href="#RFC8289" class="cite xref">RFC8289</a>]</span>.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">When a packet is enqueued, it is classified into different queues to ensure isolation between flows. While the goal of flow queuing is to assign a unique queue to each flow, flows can instead be hashed into a set of buckets using a hash function, where each bucket corresponds to its own queue. The PIE AQM operates independently on each of these queues, enabling each flow to receive appropriate congestion signals either implicitly (via packet drops) or explicitly (via mechanisms such as Explicit Congestion Notification (ECN)). For dequeuing, FQ-PIE employs the Deficit Round Robin (DRR) based scheduler described in <span>[<a href="#RFC8290" class="cite xref">RFC8290</a>]</span>, which ensures fair packet scheduling across the different queues.<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">FQ-PIE has been incorporated into the mainline Linux kernel as a queuing discipline (qdisc) <span>[<a href="#LINUX-FQ-PIE" class="cite xref">LINUX-FQ-PIE</a>]</span> and is supported by several Linux distributions. Additionally, an implementation of FQ-PIE is available in the ns-3 network simulator.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-3">FQ-PIE has been incorporated into the mainline Linux kernel as a queuing discipline (qdisc) [LINUX-FQ-PIE] and is supported by several Linux distributions. Additionally, an implementation of FQ-PIE is available in the ns-3 network simulator.<a href="#section-1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="terminology">
@@ -1383,17 +1383,9 @@ appear in all capitals, as shown here.<a href="#section-3-1" class="pilcrow">¶<
 <a href="#section-8.2" class="section-number selfRef">8.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
-<dt id="I-D.cardwell-iccrg--congestion-control">[I-D.cardwell-iccrg--congestion-control]</dt>
-        <dd>
-<span class="refTitle">"*** BROKEN REFERENCE ***"</span>. </dd>
-<dd class="break"></dd>
 <dt id="I-D.cardwell-iccrg-bbr-congestion-control">[I-D.cardwell-iccrg-bbr-congestion-control]</dt>
-        <dd>
-<span class="refAuthor">Cardwell, N.</span>, <span class="refAuthor">Cheng, Y.</span>, <span class="refAuthor">Yeganeh, S. H.</span>, <span class="refAuthor">Swett, I.</span>, and <span class="refAuthor">V. Jacobson</span>, <span class="refTitle">"BBR Congestion Control"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-cardwell-iccrg-bbr-congestion-control-02</span>, <time datetime="2022-03-07" class="refDate">7 March 2022</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-cardwell-iccrg-bbr-congestion-control-02">https://datatracker.ietf.org/doc/html/draft-cardwell-iccrg-bbr-congestion-control-02</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="LINUX-FQ-PIE">[LINUX-FQ-PIE]</dt>
       <dd>
-<span class="refAuthor">Tahiliani, G. R. M. B. V. S. L. M. S. D. P. and M. P.</span>, <span class="refTitle">"FQ-PIE Queue Discipline in the Linux Kernel Design, Implementation and Challenges"</span>, <time datetime="2019-10" class="refDate">October 2019</time>, <span>&lt;<a href="https://ieeexplore.ieee.org/abstract/document/9000684">https://ieeexplore.ieee.org/abstract/document/9000684</a>&gt;</span>. </dd>
+<span class="refAuthor">Cardwell, N.</span>, <span class="refAuthor">Cheng, Y.</span>, <span class="refAuthor">Yeganeh, S. H.</span>, <span class="refAuthor">Swett, I.</span>, and <span class="refAuthor">V. Jacobson</span>, <span class="refTitle">"BBR Congestion Control"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-cardwell-iccrg-bbr-congestion-control-02</span>, <time datetime="2022-03-07" class="refDate">7 March 2022</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-cardwell-iccrg-bbr-congestion-control-02">https://datatracker.ietf.org/doc/html/draft-cardwell-iccrg-bbr-congestion-control-02</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
