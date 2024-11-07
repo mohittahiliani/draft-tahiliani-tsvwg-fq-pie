@@ -47,7 +47,7 @@ This document presents Flow Queue Proportional Integral controller Enhanced (FQ-
 
 # Introduction
 
-Flow Queue Proportional Integral Controller Enhanced (FQ-PIE) combines flow queuing with the PIE (Proportional Integral controller Enhanced) {{!RFC8033}} Active Queue Management (AQM) algorithm to provide flow isolation and reduce bufferbloat by controlling queue delay. This is similar to how Flow Queue Controlled Delay (FQ-CoDel) {{!RFC8290}} integrates flow queuing with the CoDel (Controlled Delay) AQM algorithm.
+Flow Queue Proportional Integral Controller Enhanced (FQ-PIE) combines flow queuing with the PIE (Proportional Integral controller Enhanced) {{!RFC8033}} Active Queue Management (AQM) algorithm to provide flow isolation and reduce bufferbloat by controlling queue delay. This is similar to how Flow Queue Controlled Delay (FQ-CoDel) {{!RFC8290}} integrates flow queuing with the CoDel (Controlled Delay) AQM algorithm {{!RFC8289}}.
 
 When a packet is enqueued, it is classified into different queues to ensure isolation between flows. While the goal of flow queuing is to assign a unique queue to each flow, flows can instead be hashed into a set of buckets using a hash function, where each bucket corresponds to its own queue. The PIE AQM operates independently on each of these queues, enabling each flow to receive appropriate congestion signals either implicitly (via packet drops) or explicitly (via mechanisms such as Explicit Congestion Notification (ECN)). For dequeuing, FQ-PIE employs the Deficit Round Robin (DRR) based scheduler described in {{!RFC8290}}, which ensures fair packet scheduling across the different queues.
 
