@@ -19,7 +19,7 @@
 # Change the file extension to match the format (.xml for XML, etc...)
 #
 ###
-title: "TODO - Your title"
+title: "Flow Queue PIE: A Hybrid Packet Scheduler and Active Queue Management Algorithm"
 abbrev: "TODO - Abbreviation"
 category: info
 
