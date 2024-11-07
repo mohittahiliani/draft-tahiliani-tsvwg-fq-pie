@@ -40,7 +40,7 @@ informative:
 I-D.cardwell-iccrg-bbr-congestion-control:
 LINUX-FQ-PIE:
   target: https://ieeexplore.ieee.org/abstract/document/9000684
-  title: FQ-PIE Queue Discipline in the Linux Kernel: Design, Implementation and Challenges
+  title: "FQ-PIE Queue Discipline in the Linux Kernel: Design, Implementation and Challenges"
   author:
     name: Gautam Ramakrishnan, Mohit Bhasi, V. Saicharan, Leslie Monis, Sachin D. Patil, and Mohit P. Tahiliani
   date: October 2019
