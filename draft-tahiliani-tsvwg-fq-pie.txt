@@ -97,7 +97,7 @@ Table of Contents
    provide flow isolation and reduce bufferbloat by controlling queue
    delay.  This is similar to how Flow Queue Controlled Delay (FQ-CoDel)
    [RFC8290] integrates flow queuing with the CoDel (Controlled Delay)
-   AQM algorithm.
+   AQM algorithm [RFC8289].
 
    When a packet is enqueued, it is classified into different queues to
    ensure isolation between flows.  While the goal of flow queuing is to
@@ -289,6 +289,11 @@ Table of Contents
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+   [RFC8289]  Nichols, K., Jacobson, V., McGregor, A., Ed., and J.
+              Iyengar, Ed., "Controlled Delay Active Queue Management",
+              RFC 8289, DOI 10.17487/RFC8289, January 2018,
+              <https://www.rfc-editor.org/rfc/rfc8289>.
 
    [RFC8290]  Hoeiland-Joergensen, T., McKenney, P., Taht, D., Gettys,
               J., and E. Dumazet, "The Flow Queue CoDel Packet Scheduler
