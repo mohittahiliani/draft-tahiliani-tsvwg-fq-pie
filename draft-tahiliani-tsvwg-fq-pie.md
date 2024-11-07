@@ -44,7 +44,7 @@ LINUX-FQ-PIE:
   author:
     name: Gautam Ramakrishnan, Mohit Bhasi, V. Saicharan, Leslie Monis, Sachin D. Patil, and Mohit P. Tahiliani
   date: October 2019
-  
+
 --- abstract
 
 This document presents Flow Queue Proportional Integral controller Enhanced (FQ-PIE), a hybrid packet scheduler and Active Queue Management (AQM) algorithm to isolate flows and tackle the problem of bufferbloat. FQ-PIE uses hashing to classify incoming packets into different queues and provide flow isolation. Packets are dequeued by using a variant of the round robin scheduler. Each such flow is managed by the PIE algorithm to maintain high link utilization while controlling the queue delay to a target value.
