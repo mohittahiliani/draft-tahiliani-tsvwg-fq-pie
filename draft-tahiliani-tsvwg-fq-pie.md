@@ -57,7 +57,7 @@ Flow Queue Proportional Integral Controller Enhanced (FQ-PIE) combines flow queu
 
 When a packet is enqueued, it is classified into different queues to ensure isolation between flows. While the goal of flow queuing is to assign a unique queue to each flow, flows can instead be hashed into a set of buckets using a hash function, where each bucket corresponds to its own queue. The PIE AQM operates independently on each of these queues, enabling each flow to receive appropriate congestion signals either implicitly (via packet drops) or explicitly (via mechanisms such as Explicit Congestion Notification (ECN)). For dequeuing, FQ-PIE employs the Deficit Round Robin (DRR) based scheduler described in {{!RFC8290}}, which ensures fair packet scheduling across the different queues.
 
-FQ-PIE has been incorporated into the mainline Linux kernel as a queuing discipline (qdisc) [LINUX-FQ-PIE] and is supported by several Linux distributions. Additionally, an implementation of FQ-PIE is available in the ns-3 network simulator.
+FQ-PIE has been incorporated into the mainline Linux kernel as a queuing discipline (qdisc) {{LINUX-FQ-PIE}} and is supported by several Linux distributions. Additionally, an implementation of FQ-PIE is available in the ns-3 network simulator.
 
 # Terminology
 
