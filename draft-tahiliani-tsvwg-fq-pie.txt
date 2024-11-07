@@ -84,7 +84,9 @@ Table of Contents
    5.  Scope of Experimentation
    6.  Security Considerations
    7.  IANA Considerations
-   8.  Normative References
+   8.  References
+     8.1.  Normative References
+     8.2.  Informative References
    Author's Address
 
 1.  Introduction
@@ -233,7 +235,8 @@ Table of Contents
 
    *  Interactions between flow queuing and new congestion control
       algorithms, such as Bottleneck Bandwidth and Round-trip
-      propagation time (BBR).
+      propagation time (BBR)
+      [I-D.cardwell-iccrg-bbr-congestion-control].
 
    *  Different packet drop probability thresholds to switch from
       marking packets to dropping packets.
@@ -263,7 +266,9 @@ Table of Contents
 
    This document has no IANA actions.
 
-8.  Normative References
+8.  References
+
+8.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -290,6 +295,16 @@ Table of Contents
               and Active Queue Management Algorithm", RFC 8290,
               DOI 10.17487/RFC8290, January 2018,
               <https://www.rfc-editor.org/rfc/rfc8290>.
+
+8.2.  Informative References
+
+   [I-D.cardwell-iccrg-bbr-congestion-control]
+              Cardwell, N., Cheng, Y., Yeganeh, S. H., Swett, I., and V.
+              Jacobson, "BBR Congestion Control", Work in Progress,
+              Internet-Draft, draft-cardwell-iccrg-bbr-congestion-
+              control-02, 7 March 2022,
+              <https://datatracker.ietf.org/doc/html/draft-cardwell-
+              iccrg-bbr-congestion-control-02>.
 
 Author's Address
 
