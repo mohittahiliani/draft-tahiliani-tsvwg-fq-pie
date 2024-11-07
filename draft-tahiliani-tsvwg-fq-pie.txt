@@ -141,7 +141,7 @@ Table of Contents
    enqueue.
 
    The details of flow queuing and the PIE algorithm are not covered
-   here; for more information, please refer to RFC 8290 and RFC 8033,
+   here; for more information, please refer to [RFC8290] and [RFC8033],
    respectively.
 
 4.1.  Enqueue
