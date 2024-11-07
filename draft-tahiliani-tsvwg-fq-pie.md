@@ -26,8 +26,8 @@ venue:
 author:
  -
     fullname: "Mohit P. Tahiliani"
-    organization: Your Organization Here
-    email: "mohittahiliani@users.noreply.github.com"
+    organization: National Institute of Technology Karnataka
+    email: "tahiliani@nitk.edu.in"
 
 normative:
 
@@ -109,8 +109,3 @@ The FQ-PIE algorithm introduces no specific security exposures. The flow queuing
 This document has no IANA actions.
 
 --- back
-
-# Acknowledgments
-{:numbered="false"}
-
-TODO acknowledge.
