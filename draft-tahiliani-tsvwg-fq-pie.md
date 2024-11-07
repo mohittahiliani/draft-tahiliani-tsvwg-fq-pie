@@ -25,9 +25,14 @@ venue:
 
 author:
  -
-    fullname: "Mohit P. Tahiliani"
-    organization: National Institute of Technology Karnataka
-    email: "tahiliani@nitk.edu.in"
+    ins: M. P. Tahiliani
+    name: Mohit P. Tahiliani
+    org: National Institute of Technology Karnataka
+    street: P. O. Srinivasnagar
+    city: Mangalore - 575025
+    country: India
+    email: tahiliani@nitk.edu.in
+    uri: http://tahiliani.in
 
 normative:
 
