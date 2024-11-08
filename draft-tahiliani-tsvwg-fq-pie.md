@@ -35,15 +35,21 @@ author:
     uri: http://tahiliani.in
 
 normative:
-
 informative:
   LINUX-FQ-PIE:
-    title: FQ-PIE Queue Discipline in the Linux Kernel Design, Implementation and Challenges
-    author:
-      name: "Gautam Ramakrishnan, Mohit Bhasi, V. Saicharan, Leslie Monis, Sachin D. Patil, and Mohit P. Tahiliani"
-    date: October 2019
     target: https://ieeexplore.ieee.org/abstract/document/9000684
-I-D.cardwell-iccrg--congestion-control: ta-store
+    title: 'FQ-PIE Queue Discipline in the Linux Kernel: Design, Implementation and Challenges'
+    author:
+    - name: Gautam Ramakrishnan
+    - name: Mohit Bhasi
+    - name: V. Saicharan
+    - name: Leslie Monis
+    - name: Sachin D. Patil
+    - name: Mohit P. Tahiliani
+    date: 2019-10
+    seriesinfo:
+      2019 IEEE 44th LCN Symposium on Emerging Topics in Networking (LCN Symposium)
+  I-D.cardwell-iccrg--congestion-control
 
 --- abstract
 
