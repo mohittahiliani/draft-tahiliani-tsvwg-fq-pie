@@ -28,8 +28,8 @@ author:
     ins: M. P. Tahiliani
     name: Mohit P. Tahiliani
     org: National Institute of Technology Karnataka
-    street: P. O. Srinivasnagar
-    city: Mangalore - 575025
+    street: P. O. Srinivasnagar, Surathkal
+    city: Mangalore, Karnataka - 575025
     country: India
     email: tahiliani@nitk.edu.in
     uri: http://tahiliani.in
@@ -48,7 +48,7 @@ informative:
     - name: Mohit P. Tahiliani
     date: 2019-10
     seriesinfo:
-      2019 IEEE 44th LCN Symposium on Emerging Topics in Networking (LCN Symposium)
+      2019 IEEE 44th LCN Symposium on Emerging Topics in Networking (LCN Symposium): Oct 2019
   I-D.cardwell-iccrg--congestion-control:
 
 --- abstract
