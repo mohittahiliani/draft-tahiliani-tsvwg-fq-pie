@@ -303,6 +303,9 @@ Table of Contents
 
 8.2.  Informative References
 
+   [I-D.cardwell-iccrg--congestion-control]
+              "*** BROKEN REFERENCE ***".
+
    [I-D.cardwell-iccrg-bbr-congestion-control]
               Cardwell, N., Cheng, Y., Yeganeh, S. H., Swett, I., and V.
               Jacobson, "BBR Congestion Control", Work in Progress,
@@ -312,9 +315,11 @@ Table of Contents
               iccrg-bbr-congestion-control-02>.
 
    [LINUX-FQ-PIE]
-              Tahiliani, G. R. M. B. V. S. L. M. S. D. P. and M. P.,
-              "FQ-PIE Queue Discipline in the Linux Kernel Design,
-              Implementation and Challenges", October 2019,
+              Ramakrishnan, G., Bhasi, M., Saicharan, V., Monis, L.,
+              Patil, S. D., and M. P. Tahiliani, "FQ-PIE Queue
+              Discipline in the Linux Kernel: Design, Implementation and
+              Challenges", 2019 IEEE 44th LCN Symposium on Emerging
+              Topics in Networking (LCN Symposium) , October 2019,
               <https://ieeexplore.ieee.org/abstract/document/9000684>.
 
 Author's Address
