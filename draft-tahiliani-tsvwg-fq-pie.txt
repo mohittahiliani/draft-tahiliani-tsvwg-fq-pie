@@ -319,15 +319,16 @@ Table of Contents
               Patil, S. D., and M. P. Tahiliani, "FQ-PIE Queue
               Discipline in the Linux Kernel: Design, Implementation and
               Challenges", 2019 IEEE 44th LCN Symposium on Emerging
-              Topics in Networking (LCN Symposium) , October 2019,
+              Topics in Networking (LCN Symposium) Oct 2019, October
+              2019,
               <https://ieeexplore.ieee.org/abstract/document/9000684>.
 
 Author's Address
 
    Mohit P. Tahiliani
    National Institute of Technology Karnataka
-   P. O. Srinivasnagar
-   Mangalore - 575025
+   P. O. Srinivasnagar, Surathkal
+   Mangalore, Karnataka - 575025
    India
    Email: tahiliani@nitk.edu.in
    URI:   http://tahiliani.in
