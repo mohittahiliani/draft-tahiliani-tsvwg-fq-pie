@@ -40,10 +40,10 @@ informative:
   LINUX-FQ-PIE:
     title: FQ-PIE Queue Discipline in the Linux Kernel Design, Implementation and Challenges
     author:
-      name: Gautam Ramakrishnan, Mohit Bhasi, V. Saicharan, Leslie Monis, Sachin D. Patil, and Mohit P. Tahiliani
+      name: "Gautam Ramakrishnan, Mohit Bhasi, V. Saicharan, Leslie Monis, Sachin D. Patil, and Mohit P. Tahiliani"
     date: October 2019
     target: https://ieeexplore.ieee.org/abstract/document/9000684
-  I-D.cardwell-iccrg--congestion-control: ta-store
+I-D.cardwell-iccrg--congestion-control: ta-store
 
 --- abstract
 
