@@ -49,7 +49,7 @@ informative:
     date: 2019-10
     seriesinfo:
       2019 IEEE 44th LCN Symposium on Emerging Topics in Networking (LCN Symposium)
-  I-D.cardwell-iccrg--congestion-control
+  I-D.cardwell-iccrg--congestion-control:
 
 --- abstract
 
