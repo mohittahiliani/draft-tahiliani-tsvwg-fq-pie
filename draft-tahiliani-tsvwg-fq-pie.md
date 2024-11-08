@@ -49,6 +49,17 @@ informative:
     date: 2019-10
     seriesinfo:
       2019 IEEE 44th LCN Symposium on Emerging Topics in Networking (LCN Symposium)
+ REVISIT-PIE:
+    target: https://www.sciencedirect.com/science/article/pii/S1389128619313775
+    title: 'Revisiting design choices in queue disciplines: The PIE case'
+    author:
+    - name: Pasquale Imputato
+    - name: Stefano Avallone
+    - name: Mohit P. Tahiliani
+    - name: Gautam Ramakrishnan
+    date: 2020-04
+    seriesinfo:
+      Computer Networks, Vol. 171
   I-D.cardwell-iccrg--congestion-control:
 
 --- abstract
@@ -89,7 +100,7 @@ Next, the packet is passed to the PIE algorithm, which uses a drop probability t
 
 It is important to note that the timestamping approach provides a "per-packet queue delay," while the drop probability is calculated periodically (every 15 ms, as specified in {{!RFC8033}}). Therefore, the FQ-PIE algorithm MAY use the queue delay value from the most recently dequeued packet when calculating the drop probability.
 
-At the time of writing this document, both the Linux and ns-3 implementations use timestamps to calculate the current queue delay and consider the measurements from the most recently dequeued packet when calculating the drop probability. Additionally, both implementations offer an option to use the dequeue rate estimation technique based on Little’s Law.
+At the time of writing this document, both the Linux and ns-3 implementations use timestamps to calculate the current queue delay and consider the measurements from the most recently dequeued packet when calculating the drop probability [REVISIT-PIE]. Additionally, both implementations offer an option to use the dequeue rate estimation technique based on Little’s Law.
 
 Lastly, if an incoming packet arrives when the total number of enqueued packets has already saturated the queue capacity, FQ-PIE drops the packet without further processing. In contrast, FQ-CoDel identifies the queue with the largest current byte count (i.e., a "fat flow") when the queue capacity is saturated and drops half of the packets from this queue (up to a maximum of 64 packets, as specified in Section 4.1 of {{!RFC8290}}). FQ-PIE does not adopt this approach for the reasons explained below.
 
