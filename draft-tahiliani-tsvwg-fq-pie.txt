@@ -183,9 +183,9 @@ Table of Contents
    At the time of writing this document, both the Linux and ns-3
    implementations use timestamps to calculate the current queue delay
    and consider the measurements from the most recently dequeued packet
-   when calculating the drop probability.  Additionally, both
-   implementations offer an option to use the dequeue rate estimation
-   technique based on Little’s Law.
+   when calculating the drop probability [REVISIT-PIE].  Additionally,
+   both implementations offer an option to use the dequeue rate
+   estimation technique based on Little’s Law.
 
    Lastly, if an incoming packet arrives when the total number of
    enqueued packets has already saturated the queue capacity, FQ-PIE
@@ -235,8 +235,7 @@ Table of Contents
 
    *  Interactions between flow queuing and new congestion control
       algorithms, such as Bottleneck Bandwidth and Round-trip
-      propagation time (BBR)
-      [I-D.cardwell-iccrg-bbr-congestion-control].
+      propagation time (BBR) [draft-ietf-ccwg-bbr].
 
    *  Different packet drop probability thresholds to switch from
       marking packets to dropping packets.
@@ -303,16 +302,8 @@ Table of Contents
 
 8.2.  Informative References
 
-   [I-D.cardwell-iccrg--congestion-control]
+   [draft-ietf-ccwg-bbr]
               "*** BROKEN REFERENCE ***".
-
-   [I-D.cardwell-iccrg-bbr-congestion-control]
-              Cardwell, N., Cheng, Y., Yeganeh, S. H., Swett, I., and V.
-              Jacobson, "BBR Congestion Control", Work in Progress,
-              Internet-Draft, draft-cardwell-iccrg-bbr-congestion-
-              control-02, 7 March 2022,
-              <https://datatracker.ietf.org/doc/html/draft-cardwell-
-              iccrg-bbr-congestion-control-02>.
 
    [LINUX-FQ-PIE]
               Ramakrishnan, G., Bhasi, M., Saicharan, V., Monis, L.,
@@ -321,6 +312,13 @@ Table of Contents
               Challenges", 2019 IEEE 44th LCN Symposium on Emerging
               Topics in Networking (LCN Symposium) , October 2019,
               <https://ieeexplore.ieee.org/abstract/document/9000684>.
+
+   [REVISIT-PIE]
+              Imputato, P., Avallone, S., Tahiliani, M. P., and G.
+              Ramakrishnan, "Revisiting design choices in queue
+              disciplines: The PIE case", Computer Networks , April
+              2020, <https://www.sciencedirect.com/science/article/pii/
+              S1389128619313775>.
 
 Author's Address
 
