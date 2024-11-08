@@ -235,7 +235,7 @@ Table of Contents
 
    *  Interactions between flow queuing and new congestion control
       algorithms, such as Bottleneck Bandwidth and Round-trip
-      propagation time (BBR) [draft-ietf-ccwg-bbr].
+      propagation time (BBR) [I-D.cardwell-iccrg--congestion-control].
 
    *  Different packet drop probability thresholds to switch from
       marking packets to dropping packets.
@@ -302,7 +302,7 @@ Table of Contents
 
 8.2.  Informative References
 
-   [draft-ietf-ccwg-bbr]
+   [I-D.cardwell-iccrg--congestion-control]
               "*** BROKEN REFERENCE ***".
 
    [LINUX-FQ-PIE]
