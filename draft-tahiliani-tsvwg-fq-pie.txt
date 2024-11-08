@@ -315,8 +315,8 @@ Table of Contents
 
    [REVISIT-PIE]
               Imputato, P., Avallone, S., Tahiliani, M. P., and G.
-              Ramakrishnan, "Revisiting design choices in queue
-              disciplines: The PIE case", Computer Networks , April
+              Ramakrishnan, "Revisiting Design Choices in Queue
+              Disciplines: The PIE Case", Computer Networks , April
               2020, <https://www.sciencedirect.com/science/article/pii/
               S1389128619313775>.
 
