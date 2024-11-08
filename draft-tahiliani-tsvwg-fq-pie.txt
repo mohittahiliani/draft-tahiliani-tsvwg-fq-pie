@@ -303,9 +303,6 @@ Table of Contents
 
 8.2.  Informative References
 
-   [I-D.cardwell-iccrg--congestion-control]
-              "*** BROKEN REFERENCE ***".
-
    [I-D.cardwell-iccrg-bbr-congestion-control]
               Cardwell, N., Cheng, Y., Yeganeh, S. H., Swett, I., and V.
               Jacobson, "BBR Congestion Control", Work in Progress,
