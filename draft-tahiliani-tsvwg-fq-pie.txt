@@ -106,8 +106,8 @@ Table of Contents
    to its own queue.  The PIE AQM operates independently on each of
    these queues, enabling each flow to receive appropriate congestion
    signals either implicitly (via packet drops) or explicitly (via
-   mechanisms such as Explicit Congestion Notification (ECN)).  For
-   dequeuing, FQ-PIE employs the Deficit Round Robin (DRR) based
+   mechanisms such as Explicit Congestion Notification (ECN) [RFC3168]).
+   For dequeuing, FQ-PIE employs the Deficit Round Robin (DRR) based
    scheduler described in [RFC8290], which ensures fair packet
    scheduling across the different queues.
 
@@ -168,9 +168,9 @@ Table of Contents
    while the dequeue rate is intended to estimate the transmission rate
    of packets over the outgoing link, it may instead reflect the rate at
    which packets move from the host stack (e.g., Linux qdisc) to the
-   device driver’s transmission ring.  Additionally, in FQ-PIE, queue
-   delay estimates from Little’s Law can be unreliable, as it’s
-   challenging to calculate an accurate per-queue dequeue rate.
+   device driver’s transmission ring [REVISIT-PIE].  Additionally, in
+   FQ-PIE, queue delay estimates from Little’s Law can be unreliable, as
+   it’s challenging to calculate an accurate per-queue dequeue rate.
    Consequently, the FQ-PIE algorithm SHOULD calculate the current queue
    delay using direct measurements with timestamps.
 
@@ -183,9 +183,9 @@ Table of Contents
    At the time of writing this document, both the Linux and ns-3
    implementations use timestamps to calculate the current queue delay
    and consider the measurements from the most recently dequeued packet
-   when calculating the drop probability [REVISIT-PIE].  Additionally,
-   both implementations offer an option to use the dequeue rate
-   estimation technique based on Little’s Law.
+   when calculating the drop probability.  Additionally, both
+   implementations offer an option to use the dequeue rate estimation
+   technique based on Little’s Law.
 
    Lastly, if an incoming packet arrives when the total number of
    enqueued packets has already saturated the queue capacity, FQ-PIE
