@@ -1,6 +1,6 @@
 ---
 title: "Flow Queue PIE: A Hybrid Packet Scheduler and Active Queue Management Algorithm"
-abbrev: "TODO - Abbreviation"
+abbrev: "FQ-PIE"
 category: exp
 
 docname: draft-tahiliani-tsvwg-fq-pie-latest
