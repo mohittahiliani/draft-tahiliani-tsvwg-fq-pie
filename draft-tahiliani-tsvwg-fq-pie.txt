@@ -233,6 +233,9 @@ Table of Contents
    on July 14, 2021).  The following aspects can be explored for further
    study and experimentation:
 
+   *  The scenarios similar to those summarized in Figure 4 of [RFC7928]
+      MAY be considered for an in-depth experimentation of FQ-PIE.
+
    *  Interactions between flow queuing and new congestion control
       algorithms, such as Bottleneck Bandwidth and Round-trip
       propagation time (BBR) [I-D.draft-ietf-ccwg-bbr].
@@ -278,6 +281,11 @@ Table of Contents
               of Explicit Congestion Notification (ECN) to IP",
               RFC 3168, DOI 10.17487/RFC3168, September 2001,
               <https://www.rfc-editor.org/rfc/rfc3168>.
+
+   [RFC7928]  Kuhn, N., Ed., Natarajan, P., Ed., Khademi, N., Ed., and
+              D. Ros, "Characterization Guidelines for Active Queue
+              Management (AQM)", RFC 7928, DOI 10.17487/RFC7928, July
+              2016, <https://www.rfc-editor.org/rfc/rfc7928>.
 
    [RFC8033]  Pan, R., Natarajan, P., Baker, F., and G. White,
               "Proportional Integral Controller Enhanced (PIE): A

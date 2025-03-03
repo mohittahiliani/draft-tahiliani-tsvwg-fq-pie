@@ -1273,19 +1273,22 @@ appear in all capitals, as shown here.<a href="#section-3-1" class="pilcrow">¶<
 <p id="section-5-1">The design of the FQ-PIE algorithm as described in this document has been a part of the Linux kernel since version 5.6 (released on March 29, 2020) and ns-3 network simulator since version ns-3.34 (released on July 14, 2021). The following aspects can be explored for further study and experimentation:<a href="#section-5-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-5-2.1">
-          <p id="section-5-2.1.1">Interactions between flow queuing and new congestion control algorithms, such as Bottleneck Bandwidth and Round-trip propagation time (BBR) <span>[<a href="#I-D.draft-ietf-ccwg-bbr" class="cite xref">I-D.draft-ietf-ccwg-bbr</a>]</span>.<a href="#section-5-2.1.1" class="pilcrow">¶</a></p>
+          <p id="section-5-2.1.1">The scenarios similar to those summarized in Figure 4 of <span>[<a href="#RFC7928" class="cite xref">RFC7928</a>]</span> <span class="bcp14">MAY</span> be considered for an in-depth experimentation of FQ-PIE.<a href="#section-5-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-5-2.2">
-          <p id="section-5-2.2.1">Different packet drop probability thresholds to switch from marking packets to dropping packets.<a href="#section-5-2.2.1" class="pilcrow">¶</a></p>
+          <p id="section-5-2.2.1">Interactions between flow queuing and new congestion control algorithms, such as Bottleneck Bandwidth and Round-trip propagation time (BBR) <span>[<a href="#I-D.draft-ietf-ccwg-bbr" class="cite xref">I-D.draft-ietf-ccwg-bbr</a>]</span>.<a href="#section-5-2.2.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-5-2.3">
-          <p id="section-5-2.3.1">Evaluation of the enhancements to the PIE algorithm described in Section 5 in <span>[<a href="#RFC8033" class="cite xref">RFC8033</a>]</span> to decide which enhancements are suitable for deployment with FQ-PIE.<a href="#section-5-2.3.1" class="pilcrow">¶</a></p>
+          <p id="section-5-2.3.1">Different packet drop probability thresholds to switch from marking packets to dropping packets.<a href="#section-5-2.3.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-5-2.4">
-          <p id="section-5-2.4.1">Effectiveness of FQ-PIE in terms of providing isolation and minimal latency for low volume traffic (short flows) such as web applications, instant messaging applications, interactive applications and IoT applications.<a href="#section-5-2.4.1" class="pilcrow">¶</a></p>
+          <p id="section-5-2.4.1">Evaluation of the enhancements to the PIE algorithm described in Section 5 in <span>[<a href="#RFC8033" class="cite xref">RFC8033</a>]</span> to decide which enhancements are suitable for deployment with FQ-PIE.<a href="#section-5-2.4.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-5-2.5">
-          <p id="section-5-2.5.1">Different hashing mechanisms to improve the overall working of flow queuing.<a href="#section-5-2.5.1" class="pilcrow">¶</a></p>
+          <p id="section-5-2.5.1">Effectiveness of FQ-PIE in terms of providing isolation and minimal latency for low volume traffic (short flows) such as web applications, instant messaging applications, interactive applications and IoT applications.<a href="#section-5-2.5.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-5-2.6">
+          <p id="section-5-2.6.1">Different hashing mechanisms to improve the overall working of flow queuing.<a href="#section-5-2.6.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 </section>
@@ -1324,6 +1327,10 @@ appear in all capitals, as shown here.<a href="#section-3-1" class="pilcrow">¶<
 <dt id="RFC3168">[RFC3168]</dt>
         <dd>
 <span class="refAuthor">Ramakrishnan, K.</span>, <span class="refAuthor">Floyd, S.</span>, and <span class="refAuthor">D. Black</span>, <span class="refTitle">"The Addition of Explicit Congestion Notification (ECN) to IP"</span>, <span class="seriesInfo">RFC 3168</span>, <span class="seriesInfo">DOI 10.17487/RFC3168</span>, <time datetime="2001-09" class="refDate">September 2001</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc3168">https://www.rfc-editor.org/rfc/rfc3168</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7928">[RFC7928]</dt>
+        <dd>
+<span class="refAuthor">Kuhn, N., Ed.</span>, <span class="refAuthor">Natarajan, P., Ed.</span>, <span class="refAuthor">Khademi, N., Ed.</span>, and <span class="refAuthor">D. Ros</span>, <span class="refTitle">"Characterization Guidelines for Active Queue Management (AQM)"</span>, <span class="seriesInfo">RFC 7928</span>, <span class="seriesInfo">DOI 10.17487/RFC7928</span>, <time datetime="2016-07" class="refDate">July 2016</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7928">https://www.rfc-editor.org/rfc/rfc7928</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8033">[RFC8033]</dt>
         <dd>
