@@ -4,8 +4,8 @@
 
 Transport and Services Working Group                     M. P. Tahiliani
 Internet-Draft                National Institute of Technology Karnataka
-Intended status: Experimental                            8 November 2024
-Expires: 12 May 2025
+Intended status: Experimental                               3 March 2025
+Expires: 4 September 2025
 
 
  Flow Queue PIE: A Hybrid Packet Scheduler and Active Queue Management
@@ -56,11 +56,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 May 2025.
+   This Internet-Draft will expire on 4 September 2025.
 
 Copyright Notice
 
-   Copyright (c) 2024 IETF Trust and the persons identified as the
+   Copyright (c) 2025 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -305,9 +305,9 @@ Table of Contents
    [I-D.draft-ietf-ccwg-bbr]
               Cardwell, N., Swett, I., and J. Beshay, "BBR Congestion
               Control", Work in Progress, Internet-Draft, draft-ietf-
-              ccwg-bbr-01, 21 October 2024,
+              ccwg-bbr-02, 28 February 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-ccwg-
-              bbr-01>.
+              bbr-02>.
 
    [LINUX-FQ-PIE]
               Ramakrishnan, G., Bhasi, M., Saicharan, V., Monis, L.,
