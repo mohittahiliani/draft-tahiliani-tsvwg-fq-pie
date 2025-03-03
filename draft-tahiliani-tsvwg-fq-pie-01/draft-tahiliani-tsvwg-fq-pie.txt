@@ -164,13 +164,13 @@ Table of Contents
    delay: one uses Little’s Law, estimating delay based on the queue
    length and the average dequeue rate; the other takes direct
    measurements using timestamps, as implemented in CoDel and FQ-CoDel.
-   However, experimental studies on the PIE algorithm indicate that
-   while the dequeue rate is intended to estimate the transmission rate
-   of packets over the outgoing link, it may instead reflect the rate at
-   which packets move from the host stack (e.g., Linux qdisc) to the
-   device driver’s transmission ring [REVISIT-PIE].  Additionally, in
-   FQ-PIE, queue delay estimates from Little’s Law can be unreliable, as
-   it’s challenging to calculate an accurate per-queue dequeue rate.
+   However, experimental studies on the PIE algorithm [REVISIT-PIE]
+   indicate that while the dequeue rate is intended to estimate the
+   transmission rate of packets over the outgoing link, it may instead
+   reflect the rate at which packets move from the host stack (e.g.,
+   Linux qdisc) to the device driver’s transmission ring.  Additionally,
+   in FQ-PIE, queue delay estimates from Little’s Law can be unreliable,
+   as it’s challenging to calculate an accurate per-queue dequeue rate.
    Consequently, the FQ-PIE algorithm SHOULD calculate the current queue
    delay using direct measurements with timestamps.
 
