@@ -61,6 +61,7 @@ informative:
   ns-3-FQ-PIE:
     target: https://www.nsnam.org/docs/models/html/fq-pie.html
     title: 'FQ-PIE Queue Discipline in ns-3'
+    date: 2021-07
   REVISIT-PIE:
     target: https://www.sciencedirect.com/science/article/pii/S1389128619313775
     title: 'Revisiting Design Choices in Queue Disciplines: The PIE Case'
