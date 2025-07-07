@@ -49,6 +49,18 @@ informative:
     date: 2019-10
     seriesinfo:
       2019 IEEE 44th LCN Symposium on Emerging Topics in Networking (LCN Symposium)
+  FREEBSD-FQ-PIE:
+    target: https://web.archive.org/web/20241018123533/http://caia.swin.edu.au/reports/160418A/CAIA-TR-160418A.pdf
+    title: 'Dummynet AQM v0. 2–CoDel, FQ-CoDel, PIE and FQ-PIE for FreeBSD’s ipfw/dummynet Framework'
+    author:
+    - name: Rasool Al-Saadi
+    - name: Grenville Armitage
+    date: 2016-10
+    seriesinfo:
+      Centre for Advanced Internet Architectures, Swinburne University of Technology, Melbourne, Australia, Tech. Rep. A, 160418
+  ns-3-FQ-PIE:
+    target: https://www.nsnam.org/docs/models/html/fq-pie.html
+    title: 'FQ-PIE Queue Discipline in ns-3'
   REVISIT-PIE:
     target: https://www.sciencedirect.com/science/article/pii/S1389128619313775
     title: 'Revisiting Design Choices in Queue Disciplines: The PIE Case'
@@ -74,7 +86,7 @@ Flow Queue Proportional Integral Controller Enhanced (FQ-PIE) combines flow queu
 
 When a packet is enqueued, it is classified into different queues to ensure isolation between flows. While the goal of flow queuing is to assign a unique queue to each flow, flows can instead be hashed into a set of buckets using a hash function, where each bucket corresponds to its own queue. The PIE AQM operates independently on each of these queues, enabling each flow to receive appropriate congestion signals either implicitly (via packet drops) or explicitly (via mechanisms such as Explicit Congestion Notification (ECN) {{!RFC3168}}). For dequeuing, FQ-PIE employs the Deficit Round Robin (DRR) based scheduler described in {{!RFC8290}}, which ensures fair packet scheduling across the different queues.
 
-FQ-PIE has been incorporated into the mainline Linux kernel as a queuing discipline (qdisc) [LINUX-FQ-PIE] and is supported by several Linux distributions. Additionally, an implementation of FQ-PIE is available in the ns-3 network simulator.
+FQ-PIE has been incorporated into the mainline Linux kernel as a queuing discipline (qdisc) [LINUX-FQ-PIE] and is supported by several Linux distributions, and has also been incorporated into FreeBSD [FREEBSD-FQ-PIE]. Additionally, an implementation of FQ-PIE is available in the ns-3 network simulator [ns-3-FQ-PIE].
 
 # Terminology
 
@@ -100,7 +112,7 @@ Next, the packet is passed to the PIE algorithm, which uses a drop probability t
 
 It is important to note that the timestamping approach provides a "per-packet queue delay," while the drop probability is calculated periodically (every 15 ms, as specified in {{!RFC8033}}). Therefore, the FQ-PIE algorithm MAY use the queue delay value from the most recently dequeued packet when calculating the drop probability.
 
-At the time of writing this document, both the Linux and ns-3 implementations use timestamps to calculate the current queue delay and consider the measurements from the most recently dequeued packet when calculating the drop probability. Additionally, both implementations offer an option to use the dequeue rate estimation technique based on Little’s Law.
+At the time of writing this document, the Linux, FreeBSD and ns-3 implementations use timestamps to calculate the current queue delay and consider the measurements from the most recently dequeued packet when calculating the drop probability. Additionally, these implementations offer an option to use the dequeue rate estimation technique based on Little’s Law.
 
 Lastly, if an incoming packet arrives when the total number of enqueued packets has already saturated the queue capacity, FQ-PIE drops the packet without further processing. In contrast, FQ-CoDel identifies the queue with the largest current byte count (i.e., a "fat flow") when the queue capacity is saturated and drops half of the packets from this queue (up to a maximum of 64 packets, as specified in Section 4.1 of {{!RFC8290}}). FQ-PIE does not adopt this approach for the reasons explained below.
 
@@ -112,11 +124,11 @@ The packet dequeue process in FQ-PIE is similar to that in FQ-CoDel, where a DRR
 
 ## ECN Support
 
-FQ-PIE MAY support ECN by marking ECN-Capable Transport (ECT) packets {{!RFC3168}} instead of dropping them, in accordance with the recommendations in Section 5.1 of {{!RFC8033}}. Both implementations, Linux and ns-3, comply with these recommendations at the time of writing this document.
+FQ-PIE MAY support ECN by marking ECN-Capable Transport (ECT) packets {{!RFC3168}} instead of dropping them, in accordance with the recommendations in Section 5.1 of {{!RFC8033}}. The Linux, FreeBSD and ns-3 implementations of FQ-PIE comply with these recommendations at the time of writing this document.
 
 # Scope of Experimentation
 
-The design of the FQ-PIE algorithm as described in this document has been a part of the Linux kernel since version 5.6 (released on March 29, 2020) and ns-3 network simulator since version ns-3.34 (released on July 14, 2021). The following aspects can be explored for further study and experimentation:
+The design of the FQ-PIE algorithm as described in this document has been a part of the Linux kernel since version 5.6 (released on March 29, 2020), FreeBSD since version 11.0-RELEASE (released on October 10, 2016), and the ns-3 network simulator since version 3.34 (released on July 14, 2021). The following aspects can be explored for further study and experimentation:
 
 - The scenarios similar to those summarized in Figure 4 of {{!RFC7928}} MAY be considered for an in-depth experimentation of FQ-PIE.
 
