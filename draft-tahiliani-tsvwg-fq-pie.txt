@@ -4,8 +4,8 @@
 
 Transport and Services Working Group                     M. P. Tahiliani
 Internet-Draft                National Institute of Technology Karnataka
-Intended status: Experimental                               3 March 2025
-Expires: 4 September 2025
+Intended status: Experimental                                7 July 2025
+Expires: 8 January 2026
 
 
  Flow Queue PIE: A Hybrid Packet Scheduler and Active Queue Management
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 September 2025.
+   This Internet-Draft will expire on 8 January 2026.
 
 Copyright Notice
 
@@ -113,8 +113,9 @@ Table of Contents
 
    FQ-PIE has been incorporated into the mainline Linux kernel as a
    queuing discipline (qdisc) [LINUX-FQ-PIE] and is supported by several
-   Linux distributions.  Additionally, an implementation of FQ-PIE is
-   available in the ns-3 network simulator.
+   Linux distributions, and has also been incorporated into FreeBSD
+   [FREEBSD-FQ-PIE].  Additionally, an implementation of FQ-PIE is
+   available in the ns-3 network simulator [ns-3-FQ-PIE].
 
 2.  Terminology
 
@@ -180,10 +181,10 @@ Table of Contents
    the FQ-PIE algorithm MAY use the queue delay value from the most
    recently dequeued packet when calculating the drop probability.
 
-   At the time of writing this document, both the Linux and ns-3
+   At the time of writing this document, the Linux, FreeBSD and ns-3
    implementations use timestamps to calculate the current queue delay
    and consider the measurements from the most recently dequeued packet
-   when calculating the drop probability.  Additionally, both
+   when calculating the drop probability.  Additionally, these
    implementations offer an option to use the dequeue rate estimation
    technique based on Little’s Law.
 
@@ -221,17 +222,18 @@ Table of Contents
 
    FQ-PIE MAY support ECN by marking ECN-Capable Transport (ECT) packets
    [RFC3168] instead of dropping them, in accordance with the
-   recommendations in Section 5.1 of [RFC8033].  Both implementations,
-   Linux and ns-3, comply with these recommendations at the time of
-   writing this document.
+   recommendations in Section 5.1 of [RFC8033].  The Linux, FreeBSD and
+   ns-3 implementations of FQ-PIE comply with these recommendations at
+   the time of writing this document.
 
 5.  Scope of Experimentation
 
    The design of the FQ-PIE algorithm as described in this document has
    been a part of the Linux kernel since version 5.6 (released on March
-   29, 2020) and ns-3 network simulator since version ns-3.34 (released
-   on July 14, 2021).  The following aspects can be explored for further
-   study and experimentation:
+   29, 2020), FreeBSD since version 11.0-RELEASE (released on October
+   10, 2016), and the ns-3 network simulator since version 3.34
+   (released on July 14, 2021).  The following aspects can be explored
+   for further study and experimentation:
 
    *  The scenarios similar to those summarized in Figure 4 of [RFC7928]
       MAY be considered for an in-depth experimentation of FQ-PIE.
@@ -310,12 +312,22 @@ Table of Contents
 
 8.2.  Informative References
 
+   [FREEBSD-FQ-PIE]
+              Al-Saadi, R. and G. Armitage, "Dummynet AQM v0. 2–CoDel,
+              FQ-CoDel, PIE and FQ-PIE for FreeBSD’s ipfw/dummynet
+              Framework", Centre for Advanced Internet Architectures,
+              Swinburne University of Technology, Melbourne, Australia,
+              Tech. Rep. A, 160418 , October 2016,
+              <https://web.archive.org/web/20241018123533/
+              http://caia.swin.edu.au/reports/160418A/CAIA-TR-
+              160418A.pdf>.
+
    [I-D.draft-ietf-ccwg-bbr]
               Cardwell, N., Swett, I., and J. Beshay, "BBR Congestion
               Control", Work in Progress, Internet-Draft, draft-ietf-
-              ccwg-bbr-02, 28 February 2025,
+              ccwg-bbr-03, 7 July 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-ccwg-
-              bbr-02>.
+              bbr-03>.
 
    [LINUX-FQ-PIE]
               Ramakrishnan, G., Bhasi, M., Saicharan, V., Monis, L.,
@@ -324,6 +336,10 @@ Table of Contents
               Challenges", 2019 IEEE 44th LCN Symposium on Emerging
               Topics in Networking (LCN Symposium) , October 2019,
               <https://ieeexplore.ieee.org/abstract/document/9000684>.
+
+   [ns-3-FQ-PIE]
+              "FQ-PIE Queue Discipline in ns-3", n.d.,
+              <https://www.nsnam.org/docs/models/html/fq-pie.html>.
 
    [REVISIT-PIE]
               Imputato, P., Avallone, S., Tahiliani, M. P., and G.
