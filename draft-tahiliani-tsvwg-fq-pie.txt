@@ -338,7 +338,7 @@ Table of Contents
               <https://ieeexplore.ieee.org/abstract/document/9000684>.
 
    [ns-3-FQ-PIE]
-              "FQ-PIE Queue Discipline in ns-3", n.d.,
+              "FQ-PIE Queue Discipline in ns-3", July 2021,
               <https://www.nsnam.org/docs/models/html/fq-pie.html>.
 
    [REVISIT-PIE]
