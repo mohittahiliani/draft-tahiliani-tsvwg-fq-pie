@@ -1050,7 +1050,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Tahiliani</td>
-<td class="center">Expires 8 January 2026</td>
+<td class="center">Expires 11 January 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1063,12 +1063,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-tahiliani-tsvwg-fq-pie-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-07-07" class="published">7 July 2025</time>
+<time datetime="2025-07-10" class="published">10 July 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Experimental</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-01-08">8 January 2026</time></dd>
+<dd class="expires"><time datetime="2026-01-11">11 January 2026</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1118,7 +1118,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 8 January 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 11 January 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1204,7 +1204,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
       </h2>
 <p id="section-1-1">Flow Queue Proportional Integral Controller Enhanced (FQ-PIE) combines flow queuing with the PIE (Proportional Integral controller Enhanced) <span>[<a href="#RFC8033" class="cite xref">RFC8033</a>]</span> Active Queue Management (AQM) algorithm to provide flow isolation and reduce bufferbloat by controlling queue delay. This is similar to how Flow Queue Controlled Delay (FQ-CoDel) <span>[<a href="#RFC8290" class="cite xref">RFC8290</a>]</span> integrates flow queuing with the CoDel (Controlled Delay) AQM algorithm <span>[<a href="#RFC8289" class="cite xref">RFC8289</a>]</span>.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">When a packet is enqueued, it is classified into different queues to ensure isolation between flows. While the goal of flow queuing is to assign a unique queue to each flow, flows can instead be hashed into a set of buckets using a hash function, where each bucket corresponds to its own queue. The PIE AQM operates independently on each of these queues, enabling each flow to receive appropriate congestion signals either implicitly (via packet drops) or explicitly (via mechanisms such as Explicit Congestion Notification (ECN) <span>[<a href="#RFC3168" class="cite xref">RFC3168</a>]</span>). For dequeuing, FQ-PIE employs the Deficit Round Robin (DRR) based scheduler described in <span>[<a href="#RFC8290" class="cite xref">RFC8290</a>]</span>, which ensures fair packet scheduling across the different queues.<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">FQ-PIE has been incorporated into the mainline Linux kernel as a queuing discipline (qdisc) <span>[<a href="#LINUX-FQ-PIE" class="cite xref">LINUX-FQ-PIE</a>]</span> and is supported by several Linux distributions, and has also been incorporated into FreeBSD <span>[<a href="#FREEBSD-FQ-PIE" class="cite xref">FREEBSD-FQ-PIE</a>]</span>. Additionally, an implementation of FQ-PIE is available in the ns-3 network simulator <span>[<a href="#ns-3-FQ-PIE" class="cite xref">ns-3-FQ-PIE</a>]</span>.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-3">An implementation of FQ-PIE has been incorporated into the mainline Linux kernel as a queuing discipline (qdisc) <span>[<a href="#LINUX-FQ-PIE" class="cite xref">LINUX-FQ-PIE</a>]</span> and is supported by several Linux distributions. Another implementation has also been incorporated into FreeBSD <span>[<a href="#FREEBSD-FQ-PIE" class="cite xref">FREEBSD-FQ-PIE</a>]</span>. Finally, an implementation of FQ-PIE is also available in the ns-3 network simulator <span>[<a href="#ns-3-FQ-PIE" class="cite xref">ns-3-FQ-PIE</a>]</span>.<a href="#section-1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="terminology">

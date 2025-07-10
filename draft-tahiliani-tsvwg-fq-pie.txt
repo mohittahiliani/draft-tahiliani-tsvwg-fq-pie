@@ -4,8 +4,8 @@
 
 Transport and Services Working Group                     M. P. Tahiliani
 Internet-Draft                National Institute of Technology Karnataka
-Intended status: Experimental                                7 July 2025
-Expires: 8 January 2026
+Intended status: Experimental                               10 July 2025
+Expires: 11 January 2026
 
 
  Flow Queue PIE: A Hybrid Packet Scheduler and Active Queue Management
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 January 2026.
+   This Internet-Draft will expire on 11 January 2026.
 
 Copyright Notice
 
@@ -111,11 +111,12 @@ Table of Contents
    scheduler described in [RFC8290], which ensures fair packet
    scheduling across the different queues.
 
-   FQ-PIE has been incorporated into the mainline Linux kernel as a
-   queuing discipline (qdisc) [LINUX-FQ-PIE] and is supported by several
-   Linux distributions, and has also been incorporated into FreeBSD
-   [FREEBSD-FQ-PIE].  Additionally, an implementation of FQ-PIE is
-   available in the ns-3 network simulator [ns-3-FQ-PIE].
+   An implementation of FQ-PIE has been incorporated into the mainline
+   Linux kernel as a queuing discipline (qdisc) [LINUX-FQ-PIE] and is
+   supported by several Linux distributions.  Another implementation has
+   also been incorporated into FreeBSD [FREEBSD-FQ-PIE].  Finally, an
+   implementation of FQ-PIE is also available in the ns-3 network
+   simulator [ns-3-FQ-PIE].
 
 2.  Terminology
 
