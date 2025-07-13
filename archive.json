@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-10T01:05:21.390931+00:00",
+  "timestamp": "2025-07-13T01:12:11.239039+00:00",
   "repo": "mohittahiliani/draft-tahiliani-tsvwg-fq-pie",
   "labels": [
     {
@@ -49,6 +49,23 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDONL7jHs6_ylT3",
+      "title": "Grenville's suggestion",
+      "url": "https://github.com/mohittahiliani/draft-tahiliani-tsvwg-fq-pie/issues/1",
+      "state": "CLOSED",
+      "author": "mohittahiliani",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Grenville Armitage suggested the following alternative to the last paragraph of Section 1:\n\n\"An implementation of FQ-PIE has been incorporated into the mainline Linux kernel as a queuing discipline (qdisc) [LINUX-FQ-PIE] and is supported by several Linux distributions. Another implementation has also been incorporated into FreeBSD [FREEBSD-FQ-PIE]. Finally, an implementation of FQ-PIE is also available in  the ns-3 network simulator [ns-3-FQ-PIE].\"\n\nThis is to make it clear that the Linux and FreeBSD implementations are independent, and ensure no-one accidentally assumes one is a port of the other. ",
+      "createdAt": "2025-07-10T02:59:33Z",
+      "updatedAt": "2025-07-10T03:01:11Z",
+      "closedAt": "2025-07-10T03:01:11Z",
+      "comments": []
+    }
+  ],
   "pulls": []
 }
